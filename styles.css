@@ -1,0 +1,96 @@
+:root {
+  --primary-blue: #1e40ff;
+  --error-red: #dc3545;
+  --success-green: #28a745;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f2f2f2;
+  font-family: Arial, sans-serif;
+}
+
+.banking-container {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+#balance-display {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 2px solid var(--error-red);
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+.input-field.valid {
+  border-color: var(--success-green);
+}
+
+.input-field:focus {
+  outline: none;
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.btn {
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn-deposit {
+  background-color: var(--primary-blue);
+}
+
+.btn-withdrawal {
+  background-color: var(--error-red);
+}
+
+.error-message {
+  color: var(--error-red);
+  text-align: center;
+  margin-top: 15px;
+  display: none;
+}
+
+@media (max-width: 480px) {
+  .banking-container {
+    padding: 25px;
+  }
+
+  #balance-display {
+    font-size: 28px;
+  }
+
+  .actions {
+    grid-template-columns: 1fr;
+  }
+}
